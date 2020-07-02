@@ -19,7 +19,7 @@ namespace BoletoNet {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Html {
@@ -97,7 +97,8 @@ namespace BoletoNet {
         ///		&lt;table class=&quot;ctN w666&quot; style=&quot;margin: auto;&quot;&gt;
         ///				&lt;tr class=&quot;h13&quot;&gt;&lt;td /&gt;&lt;/tr&gt;
         ///				&lt;tr&gt;&lt;td class=&quot;Ar&quot;&gt;Corte na linha pontilhada&lt;/td&gt;&lt;/tr&gt;
-        ///				&lt;tr&gt;&lt;td class=&quot;cut&quot; [rest of string was truncated]&quot;;.
+        ///				&lt;tr&gt;&lt;td class=&quot;cut&quot; /&gt;&lt;/tr&gt;
+        ///		&lt;/tab [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CabecalhoTabelaDemonstrativo {
             get {
@@ -123,7 +124,8 @@ namespace BoletoNet {
         ///														&lt;/td&gt;
         ///												&lt;/tr&gt;
         ///												&lt;tr class=&quot;cp h12 At rBb&quot;&gt;
-        ///														 [rest of string was truncated]&quot;;.
+        ///														&lt;td&gt;
+        ///												 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Carne {
             get {
@@ -260,7 +262,7 @@ namespace BoletoNet {
         ///												&lt;td class=&quot;w104&quot;&gt;(&amp;nbsp;&amp;nbsp;)&amp;nbsp;Ausente&lt;/td&gt;
         ///												&lt;td&gt;(&amp;nbsp;&amp;nbsp;)&amp;nbsp;Não existe n. indicado&lt;/td&gt;
         ///												&lt;td&gt;(&amp;nbsp;&amp;nbsp;)&amp;nbsp;Recusado&lt;/td&gt;
-        ///												&lt;td class=&quot;w104 [rest of string was truncated]&quot;;.
+        ///												&lt;td class=&quot;w104&quot;&gt;(&amp;nbsp;&amp;nb [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ComprovanteEntrega7 {
             get {
@@ -287,7 +289,8 @@ namespace BoletoNet {
         ///							 &lt;td class=&quot;pL6&quot;&gt;&amp;nbsp;&lt;/td&gt;
         ///							 &lt;td&gt;&amp;nbsp;&lt;/td&gt;
         ///							 &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-        ///							 &lt;td&gt;&amp;nbsp;&lt;/td&gt; [rest of string was truncated]&quot;;.
+        ///							 &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        ///							 &lt;td&gt;&amp;nbsp [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ComprovanteEntrega71 {
             get {
@@ -359,7 +362,7 @@ namespace BoletoNet {
         ///                &lt;table class=&quot;w100p&quot;&gt;
         ///                    &lt;tr class=&quot;ct h13 At&quot;&gt;
         ///                        &lt;td class=&quot;w70p &quot;&gt;&lt;/td&gt;
-        ///                        &lt;td [rest of string was truncated]&quot;;.
+        ///                        &lt;td class=&quot;w30p [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Propaganda {
             get {
@@ -512,7 +515,7 @@ namespace BoletoNet {
         ///						&lt;td&gt;@NUMERODOCUMENTO&lt;/td&gt;
         ///						&lt;td&gt;@ESPECIEDOCUMENTO&lt;/td&gt;
         ///						&lt;td&gt;@ACEITE&lt;/td&gt;
-        ///						&lt;td [rest of string was truncated]&quot;;.
+        ///						&lt;td&gt;@DATAPROCESSA [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboCedenteParte4 {
             get {
@@ -536,7 +539,7 @@ namespace BoletoNet {
         ///						&lt;td class=&quot;Al&quot;&gt;@ESPECIE&lt;/td&gt;
         ///						&lt;td&gt;@QUANTIDADE&lt;/td&gt;
         ///						&lt;td&gt;@VALORDOCUMENTO&lt;/td&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///						&lt;td class [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboCedenteParte5 {
             get {
@@ -555,7 +558,7 @@ namespace BoletoNet {
         ///								&lt;div class=&quot;t&quot;&gt;(-) Desconto / Abatimentos&lt;/div&gt;
         ///								&lt;div class=&quot;c BB&quot;&gt;@DESCONTOS&lt;/div&gt;
         ///								&lt;div class=&quot;t&quot;&gt;(-) Outras deduções&lt;/div&gt;
-        ///								&lt;div class=&quot;c BB&quot;&gt; [rest of string was truncated]&quot;;.
+        ///								&lt;div class=&quot;c BB&quot;&gt;@OUTRASDED [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboCedenteParte6 {
             get {
@@ -618,7 +621,8 @@ namespace BoletoNet {
         ///			&lt;/table&gt;				
         ///			&lt;table class=&quot;w666&quot; style=&quot;margin: auto;&quot;&gt;
         ///				&lt;tr class=&quot;ct h13&quot;&gt;
-        ///						&lt;td&gt;Local de pagame [rest of string was truncated]&quot;;.
+        ///						&lt;td&gt;Local de pagamento&lt;/td&gt;
+        ///		 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboCedenteRelatorioValores {
             get {
@@ -706,7 +710,8 @@ namespace BoletoNet {
         ///						&lt;td&gt;@ESPECIE&lt;/td&gt;
         ///						&lt;td&gt;@QUANTIDADE&lt;/td&gt;
         ///						&lt;td class=&quot;Ar&quot;&gt;@NOSSONUMERO&lt;/td&gt;
-        ///				&lt;/tr&gt; [rest of string was truncated]&quot;;.
+        ///				&lt;/tr&gt;
+        ///		&lt;/table&gt;.
         /// </summary>
         internal static string ReciboSacadoParte3 {
             get {
@@ -730,7 +735,7 @@ namespace BoletoNet {
         ///						&lt;td&gt;@QUANTIDADE&lt;/td&gt;
         ///						&lt;td class=&quot;Ar&quot;&gt;@NOSSONUMERO&lt;/td&gt;
         ///				&lt;/tr&gt;
-        ///		&lt;/table [rest of string was truncated]&quot;;.
+        ///		&lt;/table&gt;.
         /// </summary>
         internal static string ReciboSacadoParte3SemCarteira {
             get {
@@ -774,7 +779,7 @@ namespace BoletoNet {
         ///						&lt;td&gt;@OUTRASDEDUCOES&lt;/td&gt;
         ///						&lt;td&gt;@MORAMULTA&lt;/td&gt;
         ///						&lt;td&gt;@OUTROSACRESCIMOS&lt;/td&gt;
-        ///						&lt;td class=&quot;Ar&quot;&gt;&amp;nbsp;@VAL [rest of string was truncated]&quot;;.
+        ///						&lt;td class=&quot;Ar&quot;&gt;&amp;nbsp;@VALORCOBRADO&lt;/td [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReciboSacadoParte5 {
             get {

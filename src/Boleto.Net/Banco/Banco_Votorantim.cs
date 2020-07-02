@@ -2,7 +2,6 @@
 using System;
 using System.Globalization;
 using System.Web.UI;
-using Microsoft.VisualBasic;
 using BoletoNet.EDI.Banco;
 using BoletoNet.Util;
 

@@ -160,11 +160,11 @@ namespace BoletoNet
             if (boleto.NossoNumero.Length > 11)
                 throw new NotImplementedException("A quantidade de dígitos do nosso número, são 11 números.");
             else if (boleto.NossoNumero.Length < 6)
-                boleto.NumBoleta = boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 6);
+                boleto.NossoNumero = boleto.NossoNumero = Utils.FormatCode(boleto.NossoNumero, 6);
             if (boleto.NossoNumero.Length == 6)
             {
                 string nn = string.Format("05{0}{1}", boleto.Carteira, boleto.NossoNumero);
-                boleto.NumBoleta = boleto.NossoNumero = string.Format("{0}{1}", nn, Mod11Mercantil(string.Format("{0}{1}", boleto.Cedente.ContaBancaria.Agencia, nn), 9));
+                boleto.NossoNumero = boleto.NossoNumero = string.Format("{0}{1}", nn, Mod11Mercantil(string.Format("{0}{1}", boleto.Cedente.ContaBancaria.Agencia, nn), 9));
             }
 
             //Verificar se a Agencia esta correta
@@ -208,7 +208,7 @@ namespace BoletoNet
 
         private void FormataCodAgenciaConta(Boleto boleto)
         {
-            boleto.AgenciaCodCedente = string.Format("{0}/{1}{2}",
+               boleto.Cedente.ContaBancaria.DigitoAgencia = string.Format("{0}/{1}{2}",
                boleto.Cedente.ContaBancaria.Agencia,
                Utils.FormatCode(boleto.Cedente.Codigo.Substring(0, boleto.Cedente.Codigo.Length - 1), 8),
                boleto.Cedente.Codigo.Substring(boleto.Cedente.Codigo.Length - 1));
@@ -253,11 +253,11 @@ namespace BoletoNet
                 detalhe.IdentificacaoDoRegistro = Utils.ToInt32(registro.Substring(0, 1));
                 detalhe.CodigoInscricao = Utils.ToInt32(registro.Substring(1, 2));
                 detalhe.NumeroInscricao = registro.Substring(3, 14);
-                detalhe.Agencia = registro.Substring(17, 4);
-                detalhe.Conta = registro.Substring(21, 7);
+                detalhe.Agencia = Utils.ToInt32(registro.Substring(17, 4));
+                detalhe.Conta = Utils.ToInt32(registro.Substring(21, 7));
                 detalhe.NumeroControle = registro.Substring(37, 25);
                 detalhe.NossoNumero = registro.Substring(66, 11);
-                detalhe.DACNossoNumero = Utils.ToInt32(registro.Substring(76, 1));
+                detalhe.DACNossoNumero = registro.Substring(76, 1);
                 detalhe.CodigoOcorrencia = Utils.ToInt32(registro.Substring(108, 2));
                 detalhe.DataOcorrencia = new DateTime(Int32.Parse(registro.Substring(114, 2)) + 2000,
                                                     Int32.Parse(registro.Substring(112, 2)),
@@ -266,32 +266,32 @@ namespace BoletoNet
                 int dataVencimento = Utils.ToInt32(registro.Substring(146, 6));
                 detalhe.DataVencimento = Utils.ToDateTime(dataVencimento.ToString("##-##-##"));
                 double valorTitulo = Convert.ToInt64(registro.Substring(152, 11));
-                detalhe.ValorTitulo = valorTitulo / 100;
+                detalhe.ValorTitulo = (decimal)(valorTitulo / 100);
                 detalhe.BancoCobrador = Utils.ToInt32(registro.Substring(165, 3));
                 detalhe.CodigoBanco = Utils.ToInt32(registro.Substring(165, 3));
                 detalhe.AgenciaCobradora = Utils.ToInt32(registro.Substring(168, 5));
                 detalhe.Especie = Utils.ToInt32(registro.Substring(173, 2));
                 double tarifaCobranca = Convert.ToInt64(registro.Substring(175, 11));
-                detalhe.TarifaCobranca = tarifaCobranca / 100;
+                detalhe.TarifaCobranca = (decimal)(tarifaCobranca / 100);
                 double outrasDespesas = Convert.ToInt64(registro.Substring(188, 11));
-                detalhe.OutrasDespesas = outrasDespesas / 100;
+                detalhe.OutrasDespesas = (decimal)(outrasDespesas / 100);
                 double juros = Convert.ToInt64(registro.Substring(201, 11));
-                detalhe.Juros = juros / 100;
+                detalhe.Juros = (decimal)(juros / 100);
                 double IOF = Convert.ToInt64(registro.Substring(214, 11));
-                detalhe.IOF = IOF / 100;
+                detalhe.IOF = (decimal)(IOF / 100);
                 double valorAbatimento = Convert.ToInt64(registro.Substring(227, 11));
-                detalhe.ValorAbatimento = valorAbatimento / 100;
+                detalhe.ValorAbatimento = (decimal)(valorAbatimento / 100);
                 double descontos = Convert.ToInt64(registro.Substring(240, 11));
-                detalhe.Descontos = descontos / 100;
+                detalhe.Descontos = (decimal)(descontos / 100);
                 double valorPago = Convert.ToInt64(registro.Substring(253, 13));
-                detalhe.ValorPago = valorPago / 100;
+                detalhe.ValorPago = (decimal)(valorPago / 100);
                 detalhe.ValorPrincipal = detalhe.ValorPago;
                 double jurosMora = Convert.ToInt64(registro.Substring(266, 11));
-                detalhe.JurosMora = jurosMora / 100;
+                detalhe.JurosMora = (decimal)(jurosMora / 100);
                 double outrosCreditos = Convert.ToInt64(registro.Substring(279, 11));
-                detalhe.OutrosCreditos = outrosCreditos / 100;
+                detalhe.OutrosCreditos = (decimal)(outrosCreditos / 100);
                 int dataCredito = Utils.ToInt32(registro.Substring(295, 6));
-                detalhe.DataCredito = Utils.ToDateTimeInvariantCulture(dataCredito);
+                detalhe.DataCredito = Utils.ToDateTime(dataCredito);
                 detalhe.Instrucao = Utils.ToInt32(registro.Substring(333, 2));
                 detalhe.MotivosRejeicao = registro.Substring(377, 10);
                 detalhe.NumeroSequencial = Utils.ToInt32(registro.Substring(394, 6));
@@ -305,7 +305,7 @@ namespace BoletoNet
             }
         }
 
-        public DetalheRetornoCNAB120 LerDetalheRetornoCNA120(string registro)
+        public DetalheRetornoCNAB240 LerDetalheRetornoCNAB240(string registro)
         {
             throw new NotImplementedException();
         }
